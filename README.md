@@ -5,7 +5,7 @@ a script that will *probably* scrape a youtube playlist and download every video
 
 run nguvaicalon.exe
 
-paste your playlist
+paste your playlist's URL
 
 and you should get a list of links that lead to each and every video in that playlist
 
