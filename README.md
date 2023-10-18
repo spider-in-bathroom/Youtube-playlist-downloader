@@ -1,5 +1,5 @@
 # Youtube-playlist-downloader
-a script that will *probably* scrape a YouTube playlist and download every video in that playlist in mp3 or mp4
+a script that will *probably* scrape a YouTube playlist and download every video in that playlist in mp3 or (im lazy so no mp4 yet)
 ---
 ---
 
