@@ -1,8 +1,10 @@
 from pytube import Playlist
 import pytube as pt
-import youtube_dl
+##import youtube_dl
 import sys
 import keyboard
+import yt_dlp
+import time as t
 number_default = 0
 
 class Nguvaicalon():
@@ -22,8 +24,10 @@ class Nguvaicalon():
         return urls
     
     #download videos as mp3
-    def Download(meow, number, number_default):
+    def Download(meow, number, number_default, tolal_time):
         for links in meow:
+            start_time = t.time()
+            
             getdownload = pt.YouTube(links)
             thisdidntwork = getdownload.streams.filter(only_audio=True).first()
             
@@ -31,41 +35,44 @@ class Nguvaicalon():
             thisdidntwork.download(output_path = "D:\Administrator\Downloads\Test")# <------------- here
             
             #change quality to 192 if seeing issues
-            ydl_opts = {
+            ydl = yt_dlp.YoutubeDL({
                 'format': 'bestaudio/best',
                 'postprocessors': [{
                 'key': 'FFmpegExtractAudio',
                 'preferredcodec': 'mp3',
-                'preferredquality': '320',
+                'preferredquality': '192',
                 }],
                 'outtmpl': 'audio/%(title)s.%(ext)s',
-            }
+            })
             
-            print(f'Starting download {thisdidntwork.default_filename}')
+            print(f'\nStarting download {thisdidntwork.default_filename}')
 
-            with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-                ydl.download([links])
-                
+            ydl.download([links])
             number_default = number_default + 1
-            print(f'Finished {number_default}/{number} songs')
+            print(f'Finished {number_default}/{number} songs in ', round(t.time()-float(start_time),2),'s')
+
+            t.time()
             if number_default == number:
-                break
+                
+                print('\nfinished download in', round(t.time()-float(tolal_time),2),'s')
+                print('\nPress Esc or Enter to escape')
+                while True:
+                    try:
+                        if keyboard.is_pressed('Esc') or keyboard.is_pressed('Enter'):
+                            sys.exit(0)
+                    except:
+                        break
+            
 
 
-if True:        
+if True:
+    ##URL_PLAYLIST = "https://www.youtube.com/playlist?list=PL4RWBwVliOGn4K7XjkQNZP-s8XtCKuIsQ"
     URL_PLAYLIST = input("Enter a playlist's URL: ")
-
+    
+    tolal_time = t.time()
     playlist = Playlist(URL_PLAYLIST)
     number = len(playlist.video_urls)
     
     meow = Nguvaicalon.Get_Url(URL_PLAYLIST)
     
-    Nguvaicalon.Download(meow, number, number_default)
-    
-    print('press Esc or Enter to escape')
-    while True:
-        try:
-            if keyboard.is_pressed('Esc') or keyboard.is_pressed('Enter'):
-                sys.exit(0)
-        except:
-            break
+    Nguvaicalon.Download(meow, number, number_default, tolal_time)
