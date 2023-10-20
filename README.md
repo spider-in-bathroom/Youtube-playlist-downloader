@@ -7,9 +7,9 @@ download the .rar file in the release section
 
 extract the file to a folder
 
-run v1.2.x .exe file
+run v1.3 .exe file
 
-answer the options 
+choose the options 
 
 copy and paste the video or playlist URL you want to download then press enter
 
