@@ -7,7 +7,7 @@ download the .rar file in the release section
 
 extract the file to a folder
 
-run v1.x.exe file
+run v1.2.x .exe file
 
 answer the options 
 
