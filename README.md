@@ -1,10 +1,16 @@
 # Youtube-playlist-downloader
-a script that will scrape a YouTube playlist and download every video in that playlist in mp3 or (im lazy so no mp4 yet)
+a script that will download YouTube video or YouTube playlist in MP3 or MP4 at high speed (made this because I hate youtube video downloader online)
 ---
 ---
 
-run nguvaicalon.exe
+download the .rar file in the release section
 
-paste your playlist's URL
+extract the file to a folder
 
-the script will show you a list of all videos in the playlist and it will automatically download all of them as mp3
+run v1.x.exe file
+
+answer the options 
+
+copy and paste the video or playlist URL you want to download then press enter
+
+the script will download it to the audio\video folder that comes with the .rar file
