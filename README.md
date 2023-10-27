@@ -1,5 +1,5 @@
-# Youtube-playlist-downloader (now supports Facebook's URL aswell !!)
-a script that will download YouTube video or YouTube playlist (or a URL to a facebook video) in MP3 or MP4 at high speed (made this because I hate youtube video downloader online)
+# Youtube-playlist-downloader (now supports Facebook and Twitter aswell !!)
+a script that will download YouTube video or YouTube playlist (or a URL to a facebook\twitter video) in MP3 or MP4 at high speed (made this because I hate online downloader)
 ---
 ---
 
